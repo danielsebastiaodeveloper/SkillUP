@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  mysql:
+    image: mysql:5.7
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    ports:
+      - "3306:3306"
+    expose:
+      - 3306
+    volumes:
+      - ./mysql5-data:/var/lib/mysql
+      - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=SkillUPDb

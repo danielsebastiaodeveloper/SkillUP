@@ -10,7 +10,7 @@ namespace SkillUP.Application.Feature.Cliente.Queries.GetClienteById;
 
 public class GetClienteByIdQuery : IRequest<Response<ClienteDTO>>
 {
-    public Guid Id { get; set; }
+    public long Id { get; set; }
 }
 
 public class GetClienteByIdQueryHandler : IRequestHandler<GetClienteByIdQuery, Response<ClienteDTO>>

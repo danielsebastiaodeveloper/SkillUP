@@ -2,7 +2,7 @@
 
 namespace SkillUP.Domain.Entities;
 
-public class Cliente : EntityBase<Guid, Guid>
+public class Cliente : EntityBase<long, long>
 {
     public required string Name { get; set; }
     public required string Email { get; set; }

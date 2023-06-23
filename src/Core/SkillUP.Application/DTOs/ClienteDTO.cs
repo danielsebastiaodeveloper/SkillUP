@@ -2,7 +2,7 @@
 
 namespace SkillUP.Application.DTOs;
 
-public class ClienteDTO: BaseDTO<Guid>
+public class ClienteDTO: BaseDTO<long>
 {
     public required string Name { get; set; }
     public required string Email { get; set; }

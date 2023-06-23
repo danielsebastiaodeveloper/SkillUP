@@ -9,7 +9,7 @@ namespace SkillUP.Application.Feature.Cliente.Commands.UpdateClienteCommand;
 
 public class UpdateClienteCommand : IRequest<Response<bool>>
 {
-    public Guid Id { get; set; }
+    public long Id { get; set; }
     public required string Name { get; set; }
     public required string Email { get; set; }
 }

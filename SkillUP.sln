@@ -6,6 +6,10 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{146FD3FF-D883-4AD4-8CF9-2559876BBAE7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infra", "infra", "{1F9E435B-9618-4E1B-ADB1-9B9D1D4F2A88}"
+	ProjectSection(SolutionItems) = preProject
+		infra\docker-compose.yaml = infra\docker-compose.yaml
+		infra\scripts\init.sql = infra\scripts\init.sql
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "script", "script", "{C6DE3CB4-E925-4EB2-A005-BB4986FDF048}"
 EndProject
@@ -25,13 +29,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastucture", "Infrastuct
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{9C93D638-ABF1-4D62-BEF3-4AE92C49DB8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillUP.Domain", "src\Core\SkillUP.Domain\SkillUP.Domain.csproj", "{18BAD868-8819-4481-B4E5-73691CF335D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkillUP.Domain", "src\Core\SkillUP.Domain\SkillUP.Domain.csproj", "{18BAD868-8819-4481-B4E5-73691CF335D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillUP.Application", "src\Core\SkillUP.Application\SkillUP.Application.csproj", "{ECB2697E-EC6D-41DC-A8C2-240D94AC94ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkillUP.Application", "src\Core\SkillUP.Application\SkillUP.Application.csproj", "{ECB2697E-EC6D-41DC-A8C2-240D94AC94ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillUP.Persistence", "src\Infrastucture\SkillUP.Persistence\SkillUP.Persistence.csproj", "{037CCBCC-D73B-4038-8E28-A1618FCF0B0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkillUP.Persistence", "src\Infrastucture\SkillUP.Persistence\SkillUP.Persistence.csproj", "{037CCBCC-D73B-4038-8E28-A1618FCF0B0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillUP.Shared", "src\Infrastucture\SkillUP.Shared\SkillUP.Shared.csproj", "{885080C6-4AEC-4E0F-8284-2703CD417EC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkillUP.Shared", "src\Infrastucture\SkillUP.Shared\SkillUP.Shared.csproj", "{885080C6-4AEC-4E0F-8284-2703CD417EC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillUP.API", "src\Presentation\SkillUP.API\SkillUP.API.csproj", "{A8733BD8-7405-4788-868E-F03FFC5F3C77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +61,10 @@ Global
 		{885080C6-4AEC-4E0F-8284-2703CD417EC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{885080C6-4AEC-4E0F-8284-2703CD417EC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{885080C6-4AEC-4E0F-8284-2703CD417EC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8733BD8-7405-4788-868E-F03FFC5F3C77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8733BD8-7405-4788-868E-F03FFC5F3C77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8733BD8-7405-4788-868E-F03FFC5F3C77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8733BD8-7405-4788-868E-F03FFC5F3C77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +80,7 @@ Global
 		{ECB2697E-EC6D-41DC-A8C2-240D94AC94ED} = {9F338EF6-E1D5-46A8-8268-53518AB4DE04}
 		{037CCBCC-D73B-4038-8E28-A1618FCF0B0D} = {92178EC2-87CB-4218-BA35-6EE97D221040}
 		{885080C6-4AEC-4E0F-8284-2703CD417EC5} = {92178EC2-87CB-4218-BA35-6EE97D221040}
+		{A8733BD8-7405-4788-868E-F03FFC5F3C77} = {8A86924D-041F-410D-8278-DE8AAED60576}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7008572A-B34C-4769-A0AA-77BCC85CF6AE}

@@ -6,7 +6,7 @@ namespace SkillUP.Application.Feature.Cliente.Commands.DeleteClienteCommand;
 
 public class DeleteClienteCommand: IRequest<Response<bool>>
 {
-    public Guid Id { get; set; }
+    public long Id { get; set; }
 }
 
 
