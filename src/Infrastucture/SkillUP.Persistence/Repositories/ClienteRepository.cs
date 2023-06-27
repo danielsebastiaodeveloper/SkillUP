@@ -41,20 +41,23 @@ public class ClienteRepository : IClienteRepository
         // Mover la parte de check para un Filter en el controlador.
         var check = await GetEntityByIdAsync(Id);
 
+
         if (check is not null)
         {
             var task = await Task.Run(async () =>
             {
 
-                string query = "DELETE FROM Clientes WHERE Id = @Id;";
+                string query = "DELETE FROM Clientes WHERE Id = @Id; SELECT ROW_COUNT();";
                 using var con = dbContext.CreateConnection();
                 var obj = new
                 {
                     @Id = Id
                 };
-                var result = await con.ExecuteAsync(query, obj);
+                var result = await con.ExecuteScalarAsync<long>(query, obj);
                 return result > 0;
             }, cancellationToken);
+
+            return task;
         }
         return false;
     }
@@ -103,7 +106,7 @@ public class ClienteRepository : IClienteRepository
         {
             var task = await Task.Run(async () =>
             {
-                string query = "UPDATE Clientes  SET Name = @Name, Email = @Email, CreatedBy = @CreatedBy, CreatedAt = @CreatedAt, State = @State WHERE Id = @Id;";
+                string query = "UPDATE Clientes  SET Name = @Name, Email = @Email, CreatedBy = @CreatedBy, CreatedAt = @CreatedAt, State = @State WHERE Id = @Id; SELECT ROW_COUNT();";
                 using var con = dbContext.CreateConnection();
                 var obj = new
                 {
