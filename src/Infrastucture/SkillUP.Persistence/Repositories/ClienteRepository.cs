@@ -32,7 +32,6 @@ public class ClienteRepository : IClienteRepository
             var result = await con.ExecuteScalarAsync<long>(query, obj);
             return result;
         }, cancellationToken);
-
         return task;
     }
 
@@ -64,7 +63,6 @@ public class ClienteRepository : IClienteRepository
     {
         var task = Task.Run(async () =>
         {
-
             string query = "SELECT Id, Name, Email, State FROM Clientes;";
             using var con = dbContext.CreateConnection();
             var result = await con.QueryAsync<Cliente>(query, param);

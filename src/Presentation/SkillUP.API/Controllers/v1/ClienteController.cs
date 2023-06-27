@@ -18,8 +18,9 @@ public class ClienteController : BaseApiController
         this.mediator = mediator;
     }
 
+    //GET, POST, PUT, PATCH, DELETE
+
     [HttpGet]
-    
     public async Task<IActionResult> GetAll([FromQuery] GetAllClientesQuery getAllClientesQuery, CancellationToken cancellationToken)
     {
         var result = await mediator.Send(getAllClientesQuery, cancellationToken);
@@ -49,6 +50,7 @@ public class ClienteController : BaseApiController
     }
 
     [HttpPut("{Id}")]
+    //http://localhost:32512/api/v1/clientes/1
     public async Task<IActionResult> Put(long Id, [FromBody] UpdateClienteCommand updateClienteCommand, CancellationToken cancellationToken)
     {
         // TODO: Move the validation to Filter
@@ -68,6 +70,7 @@ public class ClienteController : BaseApiController
     }
 
     [HttpDelete("{Id}")]
+    //http://localhost:32512/api/v1/clientes/1
     public async Task<IActionResult> Delete(long Id, CancellationToken cancellationToken)
     {
         var cliente = new DeleteClienteCommand
