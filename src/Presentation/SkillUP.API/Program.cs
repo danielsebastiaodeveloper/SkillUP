@@ -1,3 +1,4 @@
+using Prometheus;
 using SkillUP.API.Extensions;
 using SkillUP.Application;
 using SkillUP.Persistence;
@@ -31,7 +32,7 @@ if (app.Environment.IsDevelopment())
 
 //app.UseAuthorization();
 app.UseErrorHandlerMidleware();
-
+app.UseMetricServer();
 app.MapControllers();
 
 app.Run();
